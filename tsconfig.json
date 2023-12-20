@@ -7,9 +7,8 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./*"]
-      // "types": ["element-plus/global"]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client", "vuetify"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -25,19 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "allowJs": true
-    // "noImplicitAny": false
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.*"]
 }
-
-// {
-//   "files": [],
-//   "references": [
-//     {
-//       "path": "./tsconfig.node.json"
-//     },
-//     {
-//       "path": "./tsconfig.app.json"
-//     }
-//   ]
-// }
