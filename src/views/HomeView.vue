@@ -6,7 +6,7 @@ import router from "../router";
 
 const { data, loading, error } = useApi(BASE_URL);
 
-const showAlbum = (id: string) => {
+const showAlbum = (id: number) => {
   router.push(`/albums/${id}`);
 };
 </script>
