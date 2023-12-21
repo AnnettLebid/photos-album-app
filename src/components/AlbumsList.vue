@@ -2,9 +2,9 @@
 import { defineProps, defineEmits } from "vue";
 
 const emit = defineEmits(["showAlbum"]);
-defineProps(["albums"]);
+const { albums } = defineProps(["albums"]);
 
-const handleAlbum = (id: string) => {
+const handleAlbum = (id: number) => {
   emit("showAlbum", id);
 };
 </script>
