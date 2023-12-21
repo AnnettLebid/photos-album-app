@@ -4,7 +4,7 @@ export interface Album {
   title: string;
 }
 
-export interface Photo {
+export interface Image {
   id: number;
   albumId: number;
   title: string;
