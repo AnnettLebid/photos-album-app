@@ -1,3 +1,9 @@
+<script setup>
+import { defineProps, defineEmits } from "vue";
+
+defineProps(["albumImages"]);
+</script>
+
 <template>
   <v-row>
     <v-col
@@ -28,9 +34,3 @@
     </v-col>
   </v-row>
 </template>
-
-<script setup>
-import { defineProps, defineEmits } from "vue";
-
-defineProps(["albumImages"]);
-</script>

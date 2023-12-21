@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
   <v-toolbar app dark color="purple-accent-4 text-white px-2">
     <v-toolbar-title class="hidden-xs">Photos Album</v-toolbar-title>
@@ -20,7 +24,3 @@
     </div>
   </v-toolbar>
 </template>
-
-<script setup>
-import { RouterLink } from "vue-router";
-</script>
