@@ -23,6 +23,7 @@ const {
     <p>{{ searchValue }}</p>
     <div v-if="loading">Loading...</div>
     <div v-else-if="error">Error: {{ error }}</div>
+    <v-divider></v-divider>
     <ImagesList v-if="albumImages.length > 0" :albumImages="albumImages" />
   </v-container>
 </template>
