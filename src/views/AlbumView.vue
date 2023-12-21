@@ -1,26 +1,49 @@
-<script setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
+<script setup lang="ts">
+import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useApi } from "../composables/useApi";
 import ImagesList from "../components/ImagesList.vue";
-import SearchBar from "../components/SearchBar.vue";
+// import SearchBar from "../components/SearchBar.vue";
 import { BASE_URL } from "../helpers/constants";
+import { Photo } from "../types";
 
 const route = useRoute();
-const searchValue = ref("");
+const searchText = ref("");
+const albumImages = ref([]);
 
-const {
-  data: albumImages,
-  loading,
-  error,
-} = useApi(`${BASE_URL}/${route.params.id}/photos`);
+const { data, loading, error } = useApi(
+  `${BASE_URL}/${route.params.id}/photos`
+);
+
+watch(data, () => {
+  albumImages.value = data.value;
+});
+
+watch(searchText, () => {
+  const filteredImages = albumImages.value.filter((image: Photo) =>
+    image.title.toLowerCase().includes(searchText.value.toLowerCase())
+  );
+  albumImages.value = filteredImages;
+  console.log("filteredImages", filteredImages);
+});
+
+// const createDebounce = () => {
+//   let timeoutID;
+//   return (e) => {
+//     searchText.value = e.target.value;
+//     clearTimeout(timeoutID);
+//     timeoutID = setTimeout(() => {
+//       console.log(searchText.value);
+//     }, 500);
+//   };
+// };
 </script>
 
 <template>
   <v-container>
-    <SearchBar v-model="searchValue" />
-    <p>{{ searchValue }}</p>
+    <input v-model="searchText" />
+    <!-- <SearchBar v-model="searchText" /> -->
+    <p>{{ searchText }}</p>
     <div v-if="loading">Loading...</div>
     <div v-else-if="error">Error: {{ error }}</div>
     <v-divider></v-divider>
