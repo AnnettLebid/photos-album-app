@@ -5,9 +5,11 @@ import { useApi } from "../composables/useApi";
 import ImagesList from "../components/ImagesList.vue";
 import SearchBar from "../components/SearchBar.vue";
 import { BASE_URL } from "../helpers/constants";
-import { Album, Image } from "../types";
+import { Image } from "../types";
+import { store } from "../store/store";
 
 const route = useRoute();
+
 const searchText = ref("");
 const albumImages = ref([]);
 
@@ -26,16 +28,8 @@ watch(searchText, () => {
   }
 });
 
-const addFavorite = (album: Album) => {
-  console.log("addFavorite", album);
-  const savedImages = localStorage.getItem("favorites") as string | null;
-  if (savedImages) {
-    const parsedImages = JSON.parse(savedImages);
-    const newImages = [...parsedImages, album];
-    localStorage.setItem("favorites", JSON.stringify(newImages));
-  } else {
-    localStorage.setItem("favorites", JSON.stringify([album]));
-  }
+const addFavorite = (image: Image) => {
+  store.addImage(image);
 };
 
 // const createDebounce = () => {
@@ -63,7 +57,6 @@ const addFavorite = (album: Album) => {
       ></v-progress-circular>
     </div>
     <div v-else-if="error">Error: {{ error }}</div>
-
     <ImagesList
       :albumImages="searchText ? albumImages : data"
       @addFavorite="addFavorite"
