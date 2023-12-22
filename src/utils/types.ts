@@ -18,4 +18,5 @@ export interface Image {
   title: string;
   url: string;
   thumbnailUrl: string;
+  isFavorite?: boolean;
 }
