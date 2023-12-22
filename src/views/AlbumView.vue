@@ -15,16 +15,15 @@ const { data, loading, error } = useApi(
   `${BASE_URL}/${route.params.id}/photos`
 );
 
-watch(data, () => {
-  albumImages.value = data.value;
-});
-
 watch(searchText, () => {
-  const filteredImages = albumImages.value.filter((image: Image) =>
-    image.title.toLowerCase().includes(searchText.value.toLowerCase())
-  );
-  albumImages.value = filteredImages;
-  console.log("filteredImages", filteredImages);
+  if (searchText.value === "") {
+    albumImages.value = [];
+  } else {
+    const filteredImages = data.value.filter((image: Image) =>
+      image.title.toLowerCase().includes(searchText.value.toLowerCase())
+    );
+    albumImages.value = filteredImages;
+  }
 });
 
 const addFavorite = (album: Album) => {
@@ -53,15 +52,13 @@ const addFavorite = (album: Album) => {
 
 <template>
   <v-container>
-    <input v-model="searchText" />
-    <!-- <SearchBar v-model="searchText" /> -->
+    <SearchBar v-model="searchText" />
     <p>{{ searchText }}</p>
     <div v-if="loading">Loading...</div>
     <div v-else-if="error">Error: {{ error }}</div>
     <v-divider></v-divider>
     <ImagesList
-      v-if="albumImages.length > 0"
-      :albumImages="albumImages"
+      :albumImages="searchText ? albumImages : data"
       @addFavorite="addFavorite"
     />
   </v-container>
