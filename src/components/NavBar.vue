@@ -28,3 +28,11 @@ import { RouterLink } from "vue-router";
     </div>
   </v-toolbar>
 </template>
+
+<style>
+a.router-link-active button {
+  font-weight: bolder;
+  color: white;
+  text-decoration: none;
+}
+</style>
