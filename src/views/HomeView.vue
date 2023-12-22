@@ -13,7 +13,14 @@ const showAlbum = (id: number) => {
 
 <template>
   <v-container>
-    <div v-if="loading">Loading...</div>
+    <div v-if="loading" class="d-flex justify-center">
+      <v-progress-circular
+        :size="70"
+        :width="7"
+        color="purple"
+        indeterminate
+      ></v-progress-circular>
+    </div>
     <div v-else-if="error">Error: {{ error }}</div>
     <AlbumList v-if="data.length > 0" :albums="data" @showAlbum="showAlbum" />
   </v-container>
