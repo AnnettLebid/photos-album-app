@@ -1,3 +1,11 @@
+export interface Store {
+  images: {
+    [id: string]: Image;
+  };
+  addImage: (image: Image) => void;
+  removeImage: (image: Image) => void;
+}
+
 export interface Album {
   userId: number;
   id: number;
