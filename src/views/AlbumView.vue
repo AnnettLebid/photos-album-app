@@ -53,10 +53,17 @@ const addFavorite = (album: Album) => {
 <template>
   <v-container>
     <SearchBar v-model="searchText" />
-    <p>{{ searchText }}</p>
-    <div v-if="loading">Loading...</div>
-    <div v-else-if="error">Error: {{ error }}</div>
     <v-divider></v-divider>
+    <div v-if="loading" class="d-flex justify-center">
+      <v-progress-circular
+        :size="70"
+        :width="7"
+        color="purple"
+        indeterminate
+      ></v-progress-circular>
+    </div>
+    <div v-else-if="error">Error: {{ error }}</div>
+
     <ImagesList
       :albumImages="searchText ? albumImages : data"
       @addFavorite="addFavorite"
