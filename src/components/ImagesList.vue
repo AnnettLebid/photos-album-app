@@ -36,12 +36,14 @@ const handleFavorite = (image: Image) => {
           </template>
           <div>
             <v-btn
+              v-if="image.isFavorite"
               size="small"
               color="pink"
               variant="text"
               icon="mdi-heart"
             ></v-btn>
             <v-btn
+              v-else
               @click="handleFavorite(image)"
               size="small"
               color="pink"

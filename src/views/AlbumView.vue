@@ -29,7 +29,8 @@ watch(searchText, () => {
 });
 
 const addFavorite = (image: Image) => {
-  store.addImage(image);
+  const favoriteImage = { ...image, isFavorite: true };
+  store.addImage(favoriteImage);
 };
 
 // const createDebounce = () => {
