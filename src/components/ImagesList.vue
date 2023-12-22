@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from "vue";
+import { Image } from "../types";
 
 const emit = defineEmits(["addFavorite"]);
-const props = defineProps(["albumImages"]);
+defineProps(["albumImages"]);
 
-const handleFavorite = (image: number) => {
+const handleFavorite = (image: Image) => {
   emit("addFavorite", image);
 };
-console.log("albumImages", props);
 </script>
 
 <template>
