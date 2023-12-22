@@ -17,7 +17,11 @@ import { RouterLink } from "vue-router";
         <v-btn class="text-none text-subtitle-1" color="white" flat>Home</v-btn>
       </RouterLink>
       <RouterLink to="/favorite">
-        <v-btn class="text-none text-subtitle-1" color="white" flat
+        <v-btn
+          class="text-none text-subtitle-1"
+          color="white"
+          flat
+          append-icon="mdi-heart"
           >Favorites</v-btn
         >
       </RouterLink>
