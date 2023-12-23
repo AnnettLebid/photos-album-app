@@ -1,40 +1,32 @@
-# photo-album-app
+## Table of contents
 
-This template should help get you started developing with Vue 3 in Vite.
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Setup](#setup)
 
-## Recommended IDE Setup
+## General info
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This is a Photos Album application. This app allows users to see a list of albums from the
+{JSON} Placeholder API. Users can view photos in different albums, search photos by their title,
+mark photo as favorite :heart: and see all the favorite photos on a Favorites page.
+This app supports Hebrew language.
 
-## Type Support for `.vue` Imports in TS
+## Technologies
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Project is created with:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- Vue.js
+- Vuetify
+- Typescript
+- i18n
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Setup
 
-## Customize configuration
+To run this project, install it locally using npm:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
 ```
+$ cd photos-album-app
+$ npm install
+$ npm run dev
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
 ```
