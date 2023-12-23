@@ -6,4 +6,5 @@ export const store = reactive({
   addImage(image: Image) {
     this.images = { ...this.images, [image.id]: image };
   },
+  locale: "en",
 });

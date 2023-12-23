@@ -1,0 +1,21 @@
+{
+  "locale": {
+    "en": "English",
+    "he": "Hebrew"
+  },
+  "nav": {
+    "home": "Home",
+    "favorites": "Favorites",
+    "title": "Photos Album"
+  },
+  "albums_list": {
+    "view_photos": "View photos"
+  },
+  "favorites": {
+    "title": "Your favorite images",
+    "no_favorites_message": "You don't have favorite images yet"
+  },
+  "search": {
+    "search_placeholder": "Search photos..."
+  }
+}

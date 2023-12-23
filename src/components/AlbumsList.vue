@@ -38,7 +38,7 @@ const handleAlbum = (id: number) => {
                 color="white"
                 flat
               >
-                View photos
+                {{ $t("albums_list.view_photos") }}
               </v-btn>
             </v-card-actions>
           </v-card>

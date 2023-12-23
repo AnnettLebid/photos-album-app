@@ -1,0 +1,21 @@
+{
+  "locale": {
+    "en": "אנגלית",
+    "he": "עברית"
+  },
+  "nav": {
+    "home": "דף הבית",
+    "favorites": "מועדפים",
+    "title": "אלבום תמונות"
+  },
+  "albums_list": {
+    "view_photos": "תמונות"
+  },
+  "favorites": {
+    "title": "התמונות האהובות עליך",
+    "no_favorites_message": "עדיין אין לך תמונות מועדפות"
+  },
+  "search": {
+    "search_placeholder": "חפש תמונות..."
+  }
+}

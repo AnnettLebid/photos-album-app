@@ -11,7 +11,7 @@ const handleFavorite = (image: Image) => {
 </script>
 
 <template>
-  <v-container mt-2>
+  <v-container mt-2 style="overflow: auto">
     <v-row>
       <v-col
         v-for="image in albumImages"

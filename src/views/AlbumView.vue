@@ -5,7 +5,7 @@ import { useApi } from "../composables/useApi";
 import ImagesList from "../components/ImagesList.vue";
 import SearchBar from "../components/SearchBar.vue";
 import { BASE_URL } from "../helpers/constants";
-import { Image } from "../types";
+import { Image } from "../utils/types";
 import { store } from "../store/store";
 
 const route = useRoute();

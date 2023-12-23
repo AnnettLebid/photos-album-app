@@ -5,14 +5,14 @@ import ImagesList from "../components/ImagesList.vue";
 </script>
 
 <template>
-  <div class="d-flex justify-center mt-5">
-    <h1 text-center>Your favorite images</h1>
-  </div>
   <div
     v-if="Object.keys(store.images).length === 0"
     class="d-flex justify-center mt-5"
   >
-    <h4>You don't have favorite images yet</h4>
+    <h4>{{ $t("favorites.no_favorites_message") }}</h4>
   </div>
-  <ImagesList v-else :albumImages="Object.values(store.images)" />
+  <div v-else class="d-flex flex-column justify-center mt-5">
+    <h1 class="text-center">{{ $t("favorites.title") }}</h1>
+    <ImagesList :albumImages="Object.values(store.images)" />
+  </div>
 </template>
