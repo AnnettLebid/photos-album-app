@@ -17,5 +17,10 @@
   },
   "search": {
     "search_placeholder": "Search photos..."
+  },
+  "not_found": {
+    "title": "UH OH! You're lost.",
+    "message": "The page you are looking for does not exist. How you got here is a mystery. But you can click the button below to go back to the homepage.",
+    "home_button": "HOME"
   }
 }
