@@ -1,12 +1,25 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from "vue";
-import { Image } from "../types";
+import { defineProps, defineEmits, ref } from "vue";
+import { Image } from "../utils/types";
+import FullScreenImageView from "./FullScreenImageView.vue";
 
-const emit = defineEmits(["addFavorite"]);
-defineProps(["albumImages"]);
+const currentImage = ref({});
+const showModal = ref(false);
+
+const emit = defineEmits(["addFavorite", "openFullScreen"]);
+const props = defineProps(["albumImages"]);
 
 const handleFavorite = (image: Image) => {
   emit("addFavorite", image);
+};
+
+const handleImage = (image: Image) => {
+  showModal.value = true;
+  currentImage.value = image;
+};
+
+const updateCurrentImage = (index: number) => {
+  currentImage.value = props.albumImages[index];
 };
 </script>
 
@@ -20,11 +33,14 @@ const handleFavorite = (image: Image) => {
         cols="4"
       >
         <v-img
+          @click="handleImage(image)"
           :src="image.url"
           :lazy-src="image.thumbnailUrl"
+          :alt="image.title"
+          class="bg-grey-lighten-2"
           aspect-ratio="1"
           cover
-          class="bg-grey-lighten-2"
+          style="cursor: pointer"
         >
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
@@ -44,7 +60,7 @@ const handleFavorite = (image: Image) => {
             ></v-btn>
             <v-btn
               v-else
-              @click="handleFavorite(image)"
+              @click.stop="handleFavorite(image)"
               size="small"
               color="pink"
               variant="text"
@@ -54,5 +70,16 @@ const handleFavorite = (image: Image) => {
         </v-img>
       </v-col>
     </v-row>
+    <Teleport to="body">
+      <FullScreenImageView
+        :show="showModal"
+        :currentImage="currentImage"
+        :albumImages="albumImages"
+        @closeFullScreen="showModal = false"
+        @updateCurrentImage="updateCurrentImage"
+      >
+        <template #header> </template>
+      </FullScreenImageView>
+    </Teleport>
   </v-container>
 </template>
