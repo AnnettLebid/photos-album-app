@@ -10,7 +10,6 @@ export function useApi(url: string) {
     try {
       const response: AxiosResponse<[]> = await axios.get(url);
       data.value = response.data;
-      console.log(data.value);
     } catch (err: any) {
       error.value = err;
     } finally {
