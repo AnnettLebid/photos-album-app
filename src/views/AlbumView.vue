@@ -32,17 +32,6 @@ const addFavorite = (image: Image) => {
   const favoriteImage = { ...image, isFavorite: true };
   store.addImage(favoriteImage);
 };
-
-// const createDebounce = () => {
-//   let timeoutID;
-//   return (e) => {
-//     searchText.value = e.target.value;
-//     clearTimeout(timeoutID);
-//     timeoutID = setTimeout(() => {
-//       console.log(searchText.value);
-//     }, 500);
-//   };
-// };
 </script>
 
 <template>
