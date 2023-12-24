@@ -8,8 +8,9 @@
 
 This is a Photos Album application. This app allows users to see a list of albums from the
 {JSON} Placeholder API. Users can view photos in different albums :card_index_dividers:,
-search photos by their title, mark photo as favorite :heart: and see all the favorite photos on a Favorites page.
-This app supports Hebrew language.
+search photos by their title, mark photo as favorite :heart: and see all the favorite photos 
+on a Favorites page. Users can click on a photo and open a picture in a full screen and
+navigate between photos. This app supports Hebrew language.
 
 ## Technologies
 
